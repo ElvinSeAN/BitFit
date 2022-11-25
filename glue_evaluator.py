@@ -23,6 +23,7 @@ import torch
 from torch.optim import Adam
 from torch.optim import SGD
 from torch.optim import ASGD
+from torch.optim import RMSprop
 from torch.utils.data import TensorDataset, DataLoader, RandomSampler, SequentialSampler
 from datasets import load_dataset
 from transformers.optimization import AdamW
@@ -251,6 +252,8 @@ class GLUEvaluator:
             self.optimizer = SGD(self.model.parameters(), lr=learning_rate, momentum=0.9)
         elif optimizer == 'asgd':
             self.optimizer = ASGD(self.model.parameters(), lr=learning_rate)
+        elif optimizer == 'RMSPROP':
+            self.optimizer = RMSprop(self.model.parameters(), lr=learning_rate)
         else:
             raise Exception(f"optimizer arg must be in ['adam', 'adamw'], got: {optimizer}")
 
