@@ -94,7 +94,7 @@ def _plot_training_details(args):
     LOGGER.info(f'Epochs: {args.epochs}')
     LOGGER.info(f'Learning Rate: {args.learning_rate}')
     LOGGER.info(f'Batch Size: {args.batch_size}')
-    LOGGER.info(f"Optimizer: {'AdamW' if args.optimizer == 'adamw' else 'Adam'}")
+    LOGGER.info(f'Optimizer: {args.optimizer}')
 
     LOGGER.info('')
     [LOGGER.info('############################################################################################') for _
