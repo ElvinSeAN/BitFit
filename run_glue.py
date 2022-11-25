@@ -48,7 +48,7 @@ def _parse_args():
     parser.add_argument('--learning-rate', '-l', type=float, default=1e-3, help='learning rate for training.')
     parser.add_argument('--epochs', '-e', type=int, default=16, help='number of training epochs.')
     parser.add_argument('--batch-size', '-b', type=int, default=8, help='training and evaluation batch size.')
-    parser.add_argument('--optimizer', type=str, default='adamw', choices={'adam', 'adamw'})
+    parser.add_argument('--optimizer', type=str, default='adamw', choices={'adam', 'adamw','sgd','asgd'})
     parser.add_argument('--save-evaluator', action='store_true', default=False,
                         help='if given, will save the evaluator for later inference/examination.')
     parser.add_argument('--predict-test', action='store_true', default=False,
